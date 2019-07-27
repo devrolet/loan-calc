@@ -15,7 +15,7 @@ class Form extends Component {
         
         // update the state
         this.setState({
-            [name] : Number(value);
+            [name] : Number(value)
         })
     }
 

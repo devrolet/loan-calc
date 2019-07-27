@@ -15,12 +15,21 @@ class Form extends Component {
         
         // update the state
         this.setState({
-            [name] : value
+            [name] : Number(value);
         })
     }
 
-    handleSubmit = () => {
-        console.log('Form Submitted');
+    // handleSubmit = () => {
+    //     console.log('Form Submitted');
+    // }
+
+    validateForm = () => {
+        // destructuring
+        const {amount, term} = this.state;
+
+       const notValid = !amount || !term;
+
+       return notValid;
     }
 
     render() { 
@@ -52,9 +61,9 @@ class Form extends Component {
                 </select>
                </div>
                <div>
-                   <input 
-                    onClick={this.handleSubmit} 
-                    type="submit" value="Calculate" 
+                   <input disabled={ this.validateForm() }
+                    type="submit" 
+                    value="Calculate" 
                     className="u-full-width button-primary" />
                </div>
            </form>

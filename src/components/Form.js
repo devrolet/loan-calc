@@ -1,11 +1,22 @@
 import React, { Component } from 'react';
 
 class Form extends Component {
-    state = {  }
+    state = { 
+        amount: '',
+        term : ''
+     }
 
     // Create method in React (Preferred Way) normal way works as well
-    handleChange = () => {
-        console.log('Form Validated');
+    handleChange = (e) => {
+        // console.log('Form Validated');
+
+        // Desturcturing
+        const {name, value} = e.target;
+        
+        // update the state
+        this.setState({
+            [name] : value
+        })
     }
 
     handleSubmit = () => {
@@ -13,10 +24,13 @@ class Form extends Component {
     }
 
     render() { 
+        // extract some contents from the state
+        const {amount} = this.state;
+
         return ( 
            <form>
                <div>
-                <label>Amount</label>
+                <label>Amount {amount}</label>
                 <input 
                     onChange={this.handleChange}
                     name="amount" 
@@ -28,7 +42,7 @@ class Form extends Component {
                 <label>Months to Repay</label>
                 <select 
                     onChange={this.handleChange} 
-                    name="months" 
+                    name="term" 
                     className="u-full-width">
                         <option value="">Select</option>
                         <option value="3">3 Months</option>

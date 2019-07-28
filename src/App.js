@@ -8,6 +8,12 @@ import './skeleton.css';
 
 class App extends Component {
 
+  state = {
+    total: '',
+    amount: '',
+    term: ''
+  }
+
   loanInformation = (amount, term) => {
     // console.log('from app.js');
     // console.log(amount);
@@ -15,7 +21,11 @@ class App extends Component {
 
     const total = calculateTotal(amount, term);
 
-    console.log(total);
+    this.setState({
+      amount,
+      total,
+      term
+    })
   }
   render() {
     return (

@@ -16,10 +16,31 @@ export function calculateTotal(amount, term) {
         totalAmount = amount * .1;
     }
 
-    return totalAmount
+    // console.log(totalAmount);
     // Calc total interest based on term
     // 3 - 5%
     // 6 - 10%
     // 12 - 15%
-    // 24 - 10%
+    // 24 - 20%
+    let totalTerm;
+
+    switch(term) {
+        case 3:
+            totalTerm = amount * .05;
+            break;
+        case 6:
+            totalTerm = amount * .1;
+            break;
+        case 12:
+            totalTerm = amount * .15;
+            break;
+        case 24:
+            totalTerm = amount * .2;
+            break;
+        default:
+            break;
+    }
+    
+    return amount + totalAmount + totalTerm;
+
 }

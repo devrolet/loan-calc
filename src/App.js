@@ -26,6 +26,7 @@ class App extends Component {
     })
   }
   render() {
+    const {term, amount, total} = this.state;
     return (
       <Fragment>
         <div className="App">
@@ -34,10 +35,13 @@ class App extends Component {
             <Form 
               loanInformation={this.loanInformation}
             />
-
-            <Result 
-              text = "This is a string of text"
-            />
+            <div className="messages">
+              <Result 
+                total={total}
+                amount={amount}
+                term={term}
+              />
+            </div>
           </div>
         </div>
       </Fragment>

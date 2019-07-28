@@ -31,7 +31,8 @@ h1 {
 
 /* Form Styles */
 
-form {
+form,
+.messages {
   padding: 2rem;
   max-width: 800;
   margin: 0 auto;
@@ -44,4 +45,13 @@ form label {
 
 input[type="submit"]:disabled {
   opacity: .5;
+}
+
+.messages {
+  text-align: center;
+}
+
+.result {
+  border: 2px solid #00b0d7;
+  padding: 3rem 0;
 }

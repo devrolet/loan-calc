@@ -1,8 +1,8 @@
 import React, {Component, Fragment} from 'react';
 import './App.css';
 import Form from './components/Form.js';
-import Result from './components/Result.js'
 import {calculateTotal} from './helper';
+import Result from './components/Result.js';
 
 import './normalize.css';
 import './skeleton.css';
@@ -35,7 +35,9 @@ class App extends Component {
               loanInformation={this.loanInformation}
             />
 
-            <Result />
+            <Result 
+              text = "This is a string of text"
+            />
           </div>
         </div>
       </Fragment>

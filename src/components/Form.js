@@ -6,10 +6,18 @@ class Form extends Component {
         term : ''
      }
 
+     handleSubmit = (e) => {
+        e.preventDefault();
+        
+        // read the values from the state
+        const {amount, term} = this.state;
+        // pass the data to the main component
+        this.props.loanInformation(amount, term);
+        
+    }
+
     // Create method in React (Preferred Way) normal way works as well
     handleChange = (e) => {
-        // console.log('Form Validated');
-
         // Desturcturing
         const {name, value} = e.target;
         
@@ -18,10 +26,6 @@ class Form extends Component {
             [name] : Number(value)
         })
     }
-
-    // handleSubmit = () => {
-    //     console.log('Form Submitted');
-    // }
 
     validateForm = () => {
         // destructuring
@@ -37,9 +41,9 @@ class Form extends Component {
         const {amount} = this.state;
 
         return ( 
-           <form>
+           <form onSubmit={this.handleSubmit}>
                <div>
-                <label>Amount {amount}</label>
+                <label>Amount</label>
                 <input 
                     onChange={this.handleChange}
                     name="amount" 

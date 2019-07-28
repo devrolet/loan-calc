@@ -1,21 +1,29 @@
-import React from 'react';
+import React, {Component, Fragment} from 'react';
 import './App.css';
 import Form from './components/Form.js';
 
 import './normalize.css';
 import './skeleton.css';
 
-function App() {
-  return (
-    <div className="App">
-        <header className="App-header">
-          <h1>Loan Calculator</h1>
-        </header>
+class App extends Component {
+
+  loanInformation = (amount, term) => {
+    console.log('from app.js');
+    console.log(amount);
+    console.log(term);
+  }
+  render() {
+    return (
+      <Fragment>
+        <h1>Loan Calculator</h1>
         <div className="container">
-          <Form />
+          <Form 
+            loanInformation={this.loanInformation}
+          />
         </div>
-    </div>
-  );
+      </Fragment>
+    );
+  }
 }
 
 export default App;

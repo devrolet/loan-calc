@@ -1,6 +1,7 @@
 import React, {Component, Fragment} from 'react';
 import './App.css';
 import Form from './components/Form.js';
+import {calculateTotal} from './helper';
 
 import './normalize.css';
 import './skeleton.css';
@@ -8,9 +9,13 @@ import './skeleton.css';
 class App extends Component {
 
   loanInformation = (amount, term) => {
-    console.log('from app.js');
-    console.log(amount);
-    console.log(term);
+    // console.log('from app.js');
+    // console.log(amount);
+    // console.log(term);
+
+    const total = calculateTotal(amount, term);
+
+    console.log(total);
   }
   render() {
     return (
